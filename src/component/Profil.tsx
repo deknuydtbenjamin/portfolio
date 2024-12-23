@@ -2,6 +2,7 @@ import photo from "../assets/image/benjamin.jpg";
 export default function Profil() {
 	return (
 		<section className="flex items-center mr-10 ml-10 mt-5">
+			<h2>PROFIL</h2>
 			<img src={photo} alt=" benjamin" className="w-16" />
 			<div>
 				<p>

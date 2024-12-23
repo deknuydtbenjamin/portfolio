@@ -1,29 +1,19 @@
 import { NavLink } from "react-router-dom";
+import { navlinks } from "./index";
+import type { NavLinkType } from "./index";
+
 export default function Header() {
 	return (
 		<header className="bg-slate-800">
 			<nav className="flex justify-center ">
 				<ul className="flex flex-row gap-8 text-l bg-black text-white p-2 mt-8">
-					<li>
-						<NavLink to={""} className="hover:text-sky-400">
-							Accueil
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to={""} className="hover:text-sky-400">
-							Profil
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to={""} className="hover:text-sky-400">
-							Projet
-						</NavLink>
-					</li>
-					<li>
-						<NavLink to={""} className="hover:text-sky-400">
-							Contact
-						</NavLink>
-					</li>
+					{navlinks.map((elem: NavLinkType) => (
+						<li key={elem.id}>
+							<NavLink to={elem.link} className="hover:text-sky-400">
+								{elem.label}
+							</NavLink>
+						</li>
+					))}
 				</ul>
 			</nav>
 			<div className=" flex flex-col items-center p-8 gap-2">
